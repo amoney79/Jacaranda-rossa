@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Jacaranda Rossa | Sunset Marine Safari </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white font-display antialiased">
+    <div class="relative flex min-h-screen w-full flex-col max-w-[480px] mx-auto overflow-x-hidden pb-32">
+        <!-- Top App Bar Overlay -->
+        <div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-4">
+            <a href="safari-booking.html"
+                class="flex size-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-md text-white active:bg-black/50">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+            </a>
+            <div class="flex gap-2">
+                <button
+                    class="flex size-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-md text-white active:bg-black/50">
+                    <span class="material-symbols-outlined">share</span>
+                </button>
+                <button
+                    class="flex size-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-md text-white active:bg-black/50"
+                    id="favorite-btn">
+                    <span class="material-symbols-outlined">favorite</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Header Image Section -->
+        <div class="relative h-[400px] w-full">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style='background-image: linear-gradient(180deg, rgba(34,22,16,0.4) 0%, rgba(34,22,16,0) 30%, rgba(34,22,16,0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcSX2ByqPpahzdfouGd_CALR8iq4Er9DXS7rtBJRju_JLlMUvgazbQkUvBGvazA5I-bf9kz_4z8_TCgksljlcZVkXB4--8sscWqnKMMBxEsA18OQc5HO1U4Zaprh6jCRnqGwHs2yBEMClvBDe3KKX1bqC3dqTybHJoA3RvCmOi6uyzv9LHC3FBu_E-XeR33a-pBmQnYjJCGuiXAxGauCwnrbtLlu1GCf9MS8st5lX2-mp-J0jMmAajh2KCI5WHl6bpCVu1RgGFPP93");'>
+            </div>
+            <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
+                <div class="size-2 rounded-full bg-primary"></div>
+                <div class="size-2 rounded-full bg-white/40"></div>
+                <div class="size-2 rounded-full bg-white/40"></div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="px-4 -mt-6 relative z-10">
+            <h1 class="text-white tracking-tight text-[32px] font-bold leading-tight">Sunset Marine Safari</h1>
+            <div class="flex items-center gap-2 text-[#cba490] text-sm font-medium mt-1">
+                <span class="material-symbols-outlined text-xs">schedule</span>
+                <span>4 hours</span>
+                <span class="text-white/20">•</span>
+                <span class="material-symbols-outlined text-xs">location_on</span>
+                <span>Malindi Marine Park</span>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-white text-lg font-bold mb-3">Description</h3>
+                <p class="text-[#cba490] text-base leading-relaxed">Set sail on an unforgettable journey across the
+                    turquoise waters of Malindi. As the sun begins to dip below the horizon, witness the ocean transform
+                    into a palette of gold and crimson. This safari combines the thrill of spotting dolphins with the
+                    tranquility of the Indian Ocean, followed by a snorkeling stop in crystal clear shallows.</p>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-white text-lg font-bold mb-4">What's included</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
+                            <span class="material-symbols-outlined">local_bar</span>
+                        </div>
+                        <span class="text-sm font-medium text-white">Soft Drinks</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
+                            <span class="material-symbols-outlined">restaurant</span>
+                        </div>
+                        <span class="text-sm font-medium text-white">Italian Snacks</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
+                            <span class="material-symbols-outlined">scuba_diving</span>
+                        </div>
+                        <span class="text-sm font-medium text-white">Gear Included</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex size-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
+                            <span class="material-symbols-outlined">directions_boat</span>
+                        </div>
+                        <span class="text-sm font-medium text-white">Private Boat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div>
+                    <h3 class="text-white text-base font-bold">Number of Guests</h3>
+                    <p class="text-xs text-[#cba490] mt-1">Maximum 8 people</p>
+                </div>
+                <div class="flex items-center gap-4 bg-background-dark rounded-lg p-1 border border-white/10">
+                    <button
+                        class="flex size-8 items-center justify-center rounded-md bg-white/5 text-white active:bg-primary"
+                        onclick="updateGuests(-1)">
+                        <span class="material-symbols-outlined text-sm">remove</span>
+                    </button>
+                    <span class="text-base font-bold w-4 text-center" id="guest-count">2</span>
+                    <button
+                        class="flex size-8 items-center justify-center rounded-md bg-primary text-white active:bg-primary/80"
+                        onclick="updateGuests(1)">
+                        <span class="material-symbols-outlined text-sm">add</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-white text-lg font-bold">Meeting Point</h3>
+                    <button class="text-primary text-sm font-semibold">View map</button>
+                </div>
+                <div class="h-40 w-full rounded-xl bg-cover bg-center overflow-hidden border border-white/10"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCM7RBxC99pSFXaBZF-gwNE0bRlkNf4PVP0lwCJ1j55caZtrWDM-emAg_29Wm_VCLZl1lY6w5DXksQ2f_0VEhLgpCBgSEzfS-RGpYbBR4Y9JvAOy8PnPs0kA2luc1vM-7rL9jNaPXC8iXksLhaMDL3x8wlq4eeTX4AnYnd4lE0JRwSE9rWW0SZwVRDGahgDbdsRQaky7y5Ef5kLwBBOhYxF9xY6UIzCc9v-Lelz4BSxiLyEt9WhdClapOjRA_2C_3w1KXGn49ri-fZc');">
+                    <div class="flex h-full w-full items-center justify-center bg-black/20">
+                        <span class="material-symbols-outlined text-primary text-4xl drop-shadow-lg">location_on</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky Bottom CTA -->
+        <div
+            class="fixed bottom-0 left-0 right-0 z-50 bg-background-dark/80 backdrop-blur-xl border-t border-white/10 p-4 pb-8 max-w-[480px] mx-auto">
+            <div class="flex items-center justify-between gap-4">
+                <div class="flex flex-col">
+                    <span class="text-[#cba490] text-xs font-medium uppercase tracking-wider">Total Price</span>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-2xl font-bold text-white" id="safari-total">$170</span>
+                        <span class="text-sm text-[#cba490]" id="safari-pax">/ 2 pax</span>
+                    </div>
+                </div>
+                <button
+                    class="flex-1 h-14 bg-primary rounded-xl flex items-center justify-center gap-2 text-white font-bold text-lg active:scale-95 shadow-lg shadow-primary/20"
+                    onclick="addSafariToCart()">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"
+        class="fixed top-20 left-1/2 -translate-x-1/2 bg-card-dark text-white px-6 py-3 rounded-xl shadow-2xl z-[100] opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span id="toast-message">Safari added to cart!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

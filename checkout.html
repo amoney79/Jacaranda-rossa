@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Checkout - Savanna & Sea</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+    <div
+        class="relative flex h-full min-h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden pb-32">
+        <!-- TopAppBar -->
+        <header
+            class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur flex items-center p-4 border-b border-gray-200 dark:border-white/10 justify-between">
+            <a href="index.html" class="text-primary flex size-10 items-center justify-center">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+            </a>
+            <h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Checkout</h2>
+            <button class="flex size-10 items-center justify-center rounded-lg">
+                <span class="material-symbols-outlined">more_horiz</span>
+            </button>
+        </header>
+
+        <main class="flex flex-col">
+            <!-- Food Service Toggle -->
+            <div class="px-4 pt-6">
+                <div class="bg-gray-200 dark:bg-card-dark p-1 rounded-xl flex items-center">
+                    <button
+                        class="flex-1 bg-white dark:bg-primary py-2 rounded-lg text-sm font-semibold shadow-sm toggle-btn active"
+                        data-type="delivery">Delivery</button>
+                    <button class="flex-1 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 toggle-btn"
+                        data-type="pickup">Pickup</button>
+                </div>
+            </div>
+
+            <!-- Section: Food Items -->
+            <section class="mt-4" id="checkout-food-section">
+                <div class="flex items-center justify-between px-4 pb-2 pt-4">
+                    <h3 class="text-lg font-bold tracking-tight">Food Order</h3>
+                    <a href="menu.html" class="text-primary text-sm font-medium">Add items</a>
+                </div>
+                <div id="checkout-food-items">
+                    <!-- Dynamic food items will be inserted here -->
+                    <div class="px-4 py-8 text-center text-gray-400">
+                        <span class="material-symbols-outlined text-4xl mb-2">restaurant</span>
+                        <p class="text-sm">No food items in cart</p>
+                        <a href="menu.html" class="text-primary text-sm font-semibold">Browse Menu</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Experience Bookings -->
+            <section class="mt-4" id="checkout-safari-section">
+                <div class="flex items-center justify-between px-4 pb-2 pt-4">
+                    <h3 class="text-lg font-bold tracking-tight">Safari Bookings</h3>
+                    <a href="safari-booking.html" class="text-primary text-sm font-medium">Manage</a>
+                </div>
+                <div id="checkout-safari-items">
+                    <!-- Dynamic safari items will be inserted here -->
+                    <div class="px-4 py-8 text-center text-gray-400">
+                        <span class="material-symbols-outlined text-4xl mb-2">explore</span>
+                        <p class="text-sm">No safari bookings</p>
+                        <a href="safari-booking.html" class="text-primary text-sm font-semibold">Browse Safaris</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delivery Details -->
+            <section class="mt-6 px-4">
+                <div class="bg-white dark:bg-card-dark p-4 rounded-xl border border-gray-100 dark:border-white/5">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400">Delivery Address</h4>
+                        <span class="text-primary text-xs font-bold cursor-pointer">EDIT</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <div>
+                            <p class="text-sm font-semibold">124 Safari Ridge, Nairobi</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Contact: +254 700 000 000</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Price Breakdown -->
+            <section class="mt-8 px-4 space-y-3">
+                <div class="flex justify-between items-center text-gray-600 dark:text-gray-400">
+                    <span class="text-sm">Subtotal</span>
+                    <span class="text-sm font-medium" id="subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between items-center text-gray-600 dark:text-gray-400">
+                    <span class="text-sm">Taxes & Fees</span>
+                    <span class="text-sm font-medium" id="taxes">$0.00</span>
+                </div>
+                <div class="flex justify-between items-center text-gray-600 dark:text-gray-400">
+                    <span class="text-sm">Delivery Fee</span>
+                    <span class="text-sm font-medium" id="delivery-fee">$2.00</span>
+                </div>
+                <div class="pt-3 border-t border-gray-200 dark:border-white/10 flex justify-between items-center">
+                    <span class="text-lg font-bold">Total</span>
+                    <span class="text-2xl font-bold text-primary" id="checkout-total">$0.00</span>
+                </div>
+            </section>
+        </main>
+
+        <!-- Fixed Bottom Action -->
+        <div
+            class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] p-6 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-white/10 ios-blur">
+            <button
+                class="w-full bg-primary hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3"
+                onclick="confirmBooking()">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                Confirm Booking & Pay
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"
+        class="fixed top-20 left-1/2 -translate-x-1/2 bg-card-dark text-white px-6 py-3 rounded-xl shadow-2xl z-[100] opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span id="toast-message">Booking confirmed!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

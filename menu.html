@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gourmet Menu - Savanna & Sea</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden">
+        <header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
+            <div class="flex items-center p-4 pb-2 justify-between">
+                <a href="index.html" class="text-primary flex size-12 shrink-0 items-center justify-start">
+                    <span class="material-symbols-outlined" style="font-size: 28px;">arrow_back_ios_new</span>
+                </a>
+                <h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Gourmet Menu</h2>
+                <button
+                    class="flex size-12 items-center justify-center rounded-lg bg-transparent text-primary hover:bg-primary/10">
+                    <span class="material-symbols-outlined" style="font-size: 28px;">search</span>
+                </button>
+            </div>
+            <div class="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar">
+                <div
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-6 shadow-lg shadow-primary/20 chip active">
+                    <p class="text-white text-sm font-semibold">All</p>
+                </div>
+                <div
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-card-dark px-5 border border-slate-200 dark:border-transparent chip">
+                    <span class="material-symbols-outlined text-primary text-sm">restaurant</span>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Italian</p>
+                </div>
+                <div
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-card-dark px-5 border border-slate-200 dark:border-transparent chip">
+                    <span class="material-symbols-outlined text-primary text-sm">nature_people</span>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Kenyan</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto pb-32">
+            <!-- Kenyan Selection -->
+            <div class="px-4 py-2">
+                <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Authentic African</h3>
+                <div
+                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                    <div class="w-full aspect-video bg-cover bg-center"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6hIXqXe0ad975dBkByvKAhUIqrP2nD2I-jGLKnlX5aAJplg4V6uekVckD8-e8eS-Stv11TMgNvPszF_ySk4O0rmUNuJrAm7z88g76FtYwI0GOOg2Zt9OV8xOHxIGm6kPGf0ND7HpVuluNiqoh9HkYV2bzqbPwyie5IjvSUEmMPvjmZMLL5Qv5hlGCVjVAFLqe-IaIYbBW1UQJya6FakW-FcBApH-LXr8CzDI6Rwj138aUzI8SjgalfFo8QbYTLB753K2FwPRjPa_0");'>
+                    </div>
+                    <div class="flex w-full flex-col gap-1 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-lg font-bold">Authentic Nyama Choma</p>
+                            <span class="text-primary font-bold text-lg">$18.50</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Flame-grilled goat meat with
+                            kachumbari and ugali.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-1">
+                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
+                                <span class="text-xs font-semibold">4.9 (120+)</span>
+                            </div>
+                            <button
+                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                data-name="Authentic Nyama Choma" data-price="18.50">
+                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Italian Selection -->
+            <div class="px-4 py-2">
+                <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Italian Classics</h3>
+                <div
+                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                    <div class="w-full aspect-video bg-cover bg-center"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcfvjyB1rrR3NvksU1NBgxInejyxf-XSSlWwXS4-hZUQLvIVARfpufGypjsIAzJjokhEHE470tjoChLsFO69zRtLw_mw4dsmg-3X0dW5yWZOZDmd7rUnIAvkY07CYBeoscFckQGvmGQTOEq9MD-9ss6n_SBZ0hVVOYYKRq2QHrzG540Q7bFvfpxS-FxjpwBLIY-U1m5HPXxXstuR5g9tnPGyHZsFnygJN1XeKI94e_vLY3sSPivmdIyUl30CAWROaJmtJluc5wNj9a");'>
+                    </div>
+                    <div class="flex w-full flex-col gap-1 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-lg font-bold">Homemade Lasagna</p>
+                            <span class="text-primary font-bold text-lg">$22.00</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Fresh pasta, beef bolognese, and
+                            creamy bechamel.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-1">
+                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
+                                <span class="text-xs font-semibold">4.8 (85+)</span>
+                            </div>
+                            <button
+                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                data-name="Homemade Lasagna" data-price="22.00">
+                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                    <div class="w-full aspect-video bg-cover bg-center"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEisDhNSjjPOPi15xvIz0i0Pz-SIjj3QIs5QvXt1njn1cMq1mcOj16LocNMjtCwfxXh5rY8TOmFsFKveD-cvulHLRrCjjLf7quwW-d6ZMOu7aTNAALLl89ZLWJ01i9ZLGxDKArkWLBcQ5IU5zKeLh6qiKGZ3YEY6-wOQGglNDMEofUXBp60k4h-yjRuXeJCBnUk2zAAdiIxP4eGdxn0hbSwtJmL8wdHU1YHPiIt2LYWgVR6Uvs_E0AprC-YhIV0wZzmUMn5W1miFyv");'>
+                    </div>
+                    <div class="flex w-full flex-col gap-1 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-lg font-bold">Artisanal Margherita</p>
+                            <span class="text-primary font-bold text-lg">$16.00</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Wood-fired with San Marzano tomatoes
+                            and basil.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-1">
+                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
+                                <span class="text-xs font-semibold">4.7 (210+)</span>
+                            </div>
+                            <button
+                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                data-name="Artisanal Margherita" data-price="16.00">
+                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swahili -->
+            <div class="px-4 py-2">
+                <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Swahili Coastal Delights</h3>
+                <div
+                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                    <div class="w-full aspect-video bg-cover bg-center"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQ7dQ9QW5TaluUED3uEgdTFJiyBf8xKGBlxm-l336TpQKN0xzHu1CycqRTJWa2qJGyyRSmgU2nwQXDWRFNXS7s5eoNteMgVZA-NUr7Oh_mFa9tWcftiGM1pAHJf9Aro8JKrZ37QctEzH-94GfevZ2W9V6UXGRnKWRSkNFOlSufeGQ1yQDrAZSB2L6uKbp-uly-CcQT-cEpj3BiD-5F5j2L3jmx8BB8N1JhdjqDjN4oclmBLPjYfjgbjNwovIsLaOJ75aUV7Vq60c19");'>
+                    </div>
+                    <div class="flex w-full flex-col gap-1 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-lg font-bold">Coastal Beef Pilau</p>
+                            <span class="text-primary font-bold text-lg">$14.50</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Aromatic rice with beef and coastal
+                            spices.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-1">
+                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
+                                <span class="text-xs font-semibold">4.9 (56+)</span>
+                            </div>
+                            <button
+                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                data-name="Coastal Beef Pilau" data-price="14.50">
+                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Cart Button -->
+        <div class="fixed bottom-0 left-0 right-0 p-6 flex justify-center max-w-md mx-auto pointer-events-none">
+            <a href="checkout.html"
+                class="pointer-events-auto flex w-full h-16 bg-primary items-center justify-between px-6 rounded-2xl shadow-2xl shadow-primary/40 transition-all hover:scale-[1.02] active:scale-95">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="bg-white/20 backdrop-blur-md rounded-lg size-10 flex items-center justify-center relative">
+                        <span class="material-symbols-outlined text-white">shopping_bag</span>
+                        <span
+                            class="absolute -top-1 -right-1 bg-white text-primary text-[10px] font-black size-4 rounded-full flex items-center justify-center cart-count">0</span>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-white text-xs font-medium opacity-80 uppercase tracking-wider">Checkout</p>
+                        <p class="text-white text-sm font-bold">View Cart</p>
+                    </div>
+                </div>
+                <p class="text-white text-lg font-black cart-total">$0.00</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"
+        class="fixed top-20 left-1/2 -translate-x-1/2 bg-card-dark text-white px-6 py-3 rounded-xl shadow-2xl z-[100] opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span id="toast-message">Item added to cart!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

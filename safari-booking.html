@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Safari Adventure Booking - Savanna & Sea</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- TopAppBar -->
+        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="flex items-center p-4 pb-2 justify-between">
+                <a href="index.html"
+                    class="text-gray-900 dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </a>
+                <h2
+                    class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                    Safari Adventure</h2>
+                <div class="flex w-12 items-center justify-end">
+                    <button
+                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined">account_circle</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Calendar Picker -->
+        <section class="px-4 py-2">
+            <div
+                class="flex flex-col gap-3 rounded-xl bg-white/5 dark:bg-white/5 p-4 border border-gray-200 dark:border-white/10 shadow-sm">
+                <div class="flex items-center justify-between mb-2">
+                    <button class="text-gray-600 dark:text-[#cba490] hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <p class="text-gray-900 dark:text-white text-base font-bold leading-tight">October 2023</p>
+                    <button class="text-gray-600 dark:text-[#cba490] hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+                <div class="flex justify-between overflow-x-auto no-scrollbar gap-2" id="calendar-days">
+                    <div class="flex flex-col items-center min-w-[45px] py-2 rounded-lg text-gray-400 calendar-day">
+                        <span class="text-[11px] font-bold">MON</span>
+                        <span class="text-sm font-medium">2</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[45px] py-2 rounded-lg text-gray-400 calendar-day">
+                        <span class="text-[11px] font-bold">TUE</span>
+                        <span class="text-sm font-medium">3</span>
+                    </div>
+                    <div class="flex flex-col items-center min-w-[45px] py-2 rounded-lg text-gray-400 calendar-day">
+                        <span class="text-[11px] font-bold">WED</span>
+                        <span class="text-sm font-medium">4</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center min-w-[45px] py-2 rounded-lg bg-primary text-white shadow-lg shadow-primary/30 calendar-day selected">
+                        <span class="text-[11px] font-bold">THU</span>
+                        <span class="text-sm font-bold">5</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center min-w-[45px] py-2 rounded-lg text-gray-900 dark:text-white calendar-day">
+                        <span class="text-[11px] font-bold">FRI</span>
+                        <span class="text-sm font-medium">6</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center min-w-[45px] py-2 rounded-lg text-gray-900 dark:text-white calendar-day">
+                        <span class="text-[11px] font-bold">SAT</span>
+                        <span class="text-sm font-medium">7</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center min-w-[45px] py-2 rounded-lg text-gray-900 dark:text-white calendar-day">
+                        <span class="text-[11px] font-bold">SUN</span>
+                        <span class="text-sm font-medium">8</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SegmentedButtons -->
+        <section class="px-4 py-3">
+            <div class="flex h-12 flex-1 items-center justify-center rounded-xl bg-gray-200 dark:bg-[#492f22] p-1">
+                <label
+                    class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-md has-[:checked]:text-primary text-gray-600 dark:text-[#cba490] text-sm font-bold leading-normal transition-all">
+                    <span class="truncate flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">pets</span>
+                        Wild Animals
+                    </span>
+                    <input checked class="invisible w-0" name="safari-type" type="radio" value="Wild Animal Safaris" />
+                </label>
+                <label
+                    class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-md has-[:checked]:text-primary text-gray-600 dark:text-[#cba490] text-sm font-bold leading-normal transition-all">
+                    <span class="truncate flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">water_drop</span>
+                        Marine Life
+                    </span>
+                    <input class="invisible w-0" name="safari-type" type="radio" value="Marine Safaris" />
+                </label>
+            </div>
+        </section>
+
+        <!-- Section: Wild Animal Safaris -->
+        <section id="wild-safaris">
+            <div class="flex items-center justify-between px-4 pt-5 pb-3">
+                <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Wild
+                    Animal Safaris</h2>
+                <span class="text-primary text-sm font-semibold cursor-pointer">See all</span>
+            </div>
+            <!-- Card 1 -->
+            <div class="px-4 pb-4">
+                <div
+                    class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#342218] shadow-lg border border-gray-100 dark:border-white/5">
+                    <div class="relative w-full aspect-[16/9] bg-center bg-no-repeat bg-cover"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP_PSHlZfOr_P2xXriFKT9OY6jdnpIGfl8akrmQweONQsc-YK6EbwnTWaf1YBmOdCINhcFQmjfmPeLcQcWjUhNzlvGBtNoo6cqRpk2bUv_NVL5hY4v9Nl8Z5TuvnQypc9yB1WRC-1ejAasl-qJtjoW8WJOYkLyobPhCkRmfn8jfgDqCOpCSAXYq4eU5lOkTjdBBwHWzapGXhARuNKexxn7DwCMN73Y9f8ypgfA3x9vRmd8Y-bd1LlbssHnxxXdhtodxSwAWE242u9g");'>
+                        <div
+                            class="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular Choice</div>
+                    </div>
+                    <div class="flex flex-col gap-2 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-gray-900 dark:text-white text-lg font-bold leading-tight">The Big Five Tour
+                            </p>
+                            <p class="text-primary text-lg font-extrabold">$150</p>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-500 dark:text-[#cba490] text-xs font-medium">
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span> 6 hours</span>
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span> Maasai Mara</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-[#cba490]/80 text-sm leading-relaxed line-clamp-2 mt-1">
+                            Experience lions, elephants, leopards, buffalos, and rhinos in their breathtaking natural
+                            habitat with expert guides.
+                        </p>
+                        <a href="safari-detail.html"
+                            class="mt-3 flex w-full cursor-pointer items-center justify-center rounded-lg h-11 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="px-4 pb-4">
+                <div
+                    class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#342218] shadow-lg border border-gray-100 dark:border-white/5">
+                    <div class="relative w-full aspect-[16/9] bg-center bg-no-repeat bg-cover"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnuj6g4ahRgj6CMzqhYvnji6ZR1v3nkV20wxfTgnOwVU0tkav9cOuroEGyQfLzHqy7KQ1oTfijg5LySpsAgte6-g61Om8RzTxafrKZDkHSXh57lUlNPAxNB0Evy_eFtURBxG-M5Rx22yqRVFYdBcfTcQPropgi2DXgdR5txMFDxWrxku0tTEx9vULpfEkKFz1rUs1btvLwtuiJUEXZOVk3DcUVUosBSQkBYXL6_EufRY5liqlQQlBmoBCqJsU9ACR5AFzgX_CA8epa");'>
+                    </div>
+                    <div class="flex flex-col gap-2 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Elephant Sanctuary
+                                Visit</p>
+                            <p class="text-primary text-lg font-extrabold">$80</p>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-500 dark:text-[#cba490] text-xs font-medium">
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span> 3 hours</span>
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span> Nairobi Park</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-[#cba490]/80 text-sm leading-relaxed line-clamp-2 mt-1">
+                            A unique educational experience getting up close with rescued baby elephants at the
+                            world-renowned nursery.
+                        </p>
+                        <button
+                            class="mt-3 flex w-full cursor-pointer items-center justify-center rounded-lg h-11 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all add-safari-to-cart"
+                            data-name="Elephant Sanctuary Visit" data-price="80">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Marine Safaris -->
+        <section class="pb-24" id="marine-safaris">
+            <div class="flex items-center justify-between px-4 pt-5 pb-3">
+                <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Marine
+                    Safaris</h2>
+                <span class="text-primary text-sm font-semibold cursor-pointer">See all</span>
+            </div>
+            <!-- Card 3 -->
+            <div class="px-4 pb-4">
+                <div
+                    class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#342218] shadow-lg border border-gray-100 dark:border-white/5">
+                    <div class="relative w-full aspect-[16/9] bg-center bg-no-repeat bg-cover"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANVY2pkn90Pn0lvV9dtgoy1J63cZhmm0BFRD5iA4cF57NISaP7WhXZbLJjmwMLYNx-slkHQviRNl-xbIdBWT345aS9BhQZ3w2_AbV7mLzLP4wWGD5alda7BaL1vCp0m89D8CKOFUxq06p1kGGZUCrqSQ1QRp1ijBtRDu3bDuSERJQkXvbHgLjlPvl42kp9r6VSum98jb1qgnMuYl2-Wlg_SwrWlEqxSh9Hm6szgML2-MBTUFoxEqLJyOid_4LqE1KCZNQQLVlXAVSe");'>
+                    </div>
+                    <div class="flex flex-col gap-2 p-4">
+                        <div class="flex justify-between items-start">
+                            <p class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Dolphin Watching &
+                                Snorkeling</p>
+                            <p class="text-primary text-lg font-extrabold">$120</p>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-500 dark:text-[#cba490] text-xs font-medium">
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span> 4 hours</span>
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">location_on</span> Watamu Marine</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-[#cba490]/80 text-sm leading-relaxed line-clamp-2 mt-1">
+                            Sail the turquoise waters of the Indian Ocean to find playful dolphins and swim among
+                            colorful coral reefs.
+                        </p>
+                        <button
+                            class="mt-3 flex w-full cursor-pointer items-center justify-center rounded-lg h-11 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all add-safari-to-cart"
+                            data-name="Dolphin Watching & Snorkeling" data-price="120">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-background-dark/95 backdrop-blur-xl border-t border-gray-200 dark:border-white/5 px-6 pb-6 pt-3">
+            <div class="flex justify-between items-center max-w-md mx-auto">
+                <a href="index.html" class="flex flex-col items-center gap-1 text-gray-400">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="text-[10px] font-medium">Home</span>
+                </a>
+                <a href="safari-booking.html" class="flex flex-col items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined">explore</span>
+                    <span class="text-[10px] font-bold">Safaris</span>
+                </a>
+                <a href="menu.html" class="flex flex-col items-center gap-1 text-gray-400">
+                    <span class="material-symbols-outlined">restaurant</span>
+                    <span class="text-[10px] font-medium">Cuisine</span>
+                </a>
+                <a href="checkout.html" class="flex flex-col items-center gap-1 text-gray-400">
+                    <span class="material-symbols-outlined">confirmation_number</span>
+                    <span class="text-[10px] font-medium">Bookings</span>
+                </a>
+            </div>
+        </nav>
+        <div class="h-5 bg-transparent"></div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"
+        class="fixed top-20 left-1/2 -translate-x-1/2 bg-card-dark text-white px-6 py-3 rounded-xl shadow-2xl z-[100] opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span id="toast-message">Safari added to bookings!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Jacaranda Rossa </title>
+    <meta name="description" content="Experience Kenyan safaris and Italian-African cuisine">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+        <span class="material-symbols-outlined text-primary text-2xl cursor-pointer">menu</span>
+        <h1 class="text-lg font-extrabold tracking-tight">Jacaranda Rossa</h1>
+        <a href="checkout.html"><span class="material-symbols-outlined text-2xl cursor-pointer">shopping_bag</span></a>
+    </header>
+
+    <main class="pb-24">
+        <!-- Hero Carousel -->
+        <section class="mt-2">
+            <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 px-4" id="hero-carousel">
+                <div class="snap-center shrink-0 w-[85vw] aspect-[4/5] relative rounded-xl overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: linear-gradient(to top, rgba(34,22,16,0.9) 0%, rgba(34,22,16,0) 50%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHiJD1yN_5rRqhZ3O_Av0tbqsgUKZNg-FpEPmVCfMQiHOQkhSTuJQ0vNEkPdCw58qNLkzQ2yhDpHHpBKZyzJGEfsaK_MVPGJTRkpOA3xh4GBUK4KVgkU3XX12sya8JShgHgFnu-90H8kVK2zFple3Q44w597I8Wrg5cQjIn8BffVvWT5-b0v3vq_zaE5MkjF8V3dmjnb_YWyGtijbc3VktdyM_uCXRnb7CDOJgn882AMiewhbeNFCX1qCn-YKyCYFq5Z4Zt8Eem0-5');">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <span
+                            class="bg-primary text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full text-white mb-2 inline-block">Wild
+                            Adventure</span>
+                        <h2 class="text-3xl font-bold text-white leading-tight">Kenyan Sunset<br />Safaris</h2>
+                        <p class="text-white/80 text-sm mt-2 mb-4">Experience the magic of the Maasai Mara.</p>
+                        <a href="safari-booking.html"
+                            class="bg-primary hover:bg-orange-600 text-white px-6 py-2 rounded-full font-bold text-sm inline-block">Book
+                            Now</a>
+                    </div>
+                </div>
+                <div class="snap-center shrink-0 w-[85vw] aspect-[4/5] relative rounded-xl overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: linear-gradient(to top, rgba(34,22,16,0.9) 0%, rgba(34,22,16,0) 50%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDtFgA0YM1jV4tLyfDWV520AvnVdTwQaYkcFJYUkFH9-Nx5kGzs9n0x_iPlp95bp6yKfp2NEvWMv0ALEqj1p-wdRkT1eqjqAZTSd1LeoMQp-lQacJaoLYOdr85SC6t2wfvCm6Xwg9UiLd3fx4cF8xoXGWQhCs8TMEVh1b68stKj9H17NaIyYXJaE4ZI-TAWmjDHWSMghrJZdxawep6CS2h6UVQUJDU779dy583wGqsXrLmJAUtRwuI91taGqk9XavN68Y44e7ZwcUF');">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <span
+                            class="bg-[#008c45] text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full text-white mb-2 inline-block">Authentic
+                            Italian</span>
+                        <h2 class="text-3xl font-bold text-white leading-tight">Handmade<br />Gourmet Pasta</h2>
+                        <p class="text-white/80 text-sm mt-2 mb-4">The authentic taste of Italy in the heart of Africa.
+                        </p>
+                        <a href="menu.html"
+                            class="bg-white text-background-dark px-6 py-2 rounded-full font-bold text-sm inline-block">View
+                            Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-1.5 mt-4" id="carousel-dots">
+                <div class="h-1.5 w-6 bg-primary rounded-full dot active"></div>
+                <div class="h-1.5 w-1.5 bg-slate-300 dark:bg-white/20 rounded-full dot"></div>
+            </div>
+        </section>
+
+        <!-- Category Grid -->
+        <section class="mt-8 px-4">
+            <h3 class="text-xl font-bold mb-4">Our Services</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="menu.html" class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        style="background-image: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbzhU4XKdUCmAC7fzrlHL2N-HFdBhBicH4s_U395EdEcLt3Zfe6eVNqDVijEAQqU08_m7i1Y_LzMj2LTxEu13SUpKMEZhqdRQhCbxdICaFANMJrJLGfW8KNDjQf-YCcnBvjDJSdtRFNSmnGSohGNvmY68-lvbIig7UTchRb1OpdjP6hqP9Wgh32Fdb81sk0_FnHT5m42pPpA6UhMscuwpOc_DBfnnt23ZW7iYCeREa-EpG_ohx341a2HSJx7s7fKMc0SE2w20fzD5d');">
+                    </div>
+                    <div class="absolute inset-0 flex items-end p-4">
+                        <p class="text-white font-bold text-lg leading-tight">Gourmet<br />Dining</p>
+                    </div>
+                </a>
+                <a href="safari-booking.html"
+                    class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        style="background-image: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFnAmzcDQWUxC0aP36ZmWpyKSAPUJNmEpOAGtbPr1FawAsGupFPmvWAMlQRGdCoGe28_azAWqhPVJ_GcedSl-ZZFjvjUG1scHRrrRwfmfQTYbv9qsvGW8zCPb57rF9BG54FP2MexZkBs50YP7zE8wWmeXXZDjGmBlowgHqRHl7LPnjn0JuhEq1ixNlLbR4RO0dDslafiVwJaT9MtxnSrE2MQ730PtBLPn607Qkm1poYI3ypNOizmlm-WdW9BTMmWhalh6OKQYEo9No');">
+                    </div>
+                    <div class="absolute inset-0 flex items-end p-4">
+                        <p class="text-white font-bold text-lg leading-tight">Safari<br />Adventures</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Trending -->
+        <section class="mt-10">
+            <div class="flex items-center justify-between px-4 mb-4">
+                <h3 class="text-xl font-bold">Trending Today</h3>
+                <a href="menu.html" class="text-primary text-sm font-semibold">See All</a>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar gap-4 px-4">
+                <a href="menu.html"
+                    class="shrink-0 w-64 bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-slate-100 dark:border-white/10 shadow-sm hover-lift">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA43aZjxa_aB4CssQxRYx2iTI11jPStdaF4BrFejTA9iOMuLQhiZ0-X8_Akdi998juJm4rX294_qYZUeyH1pFj6uiqMPkl0tABmeJuwCVznSkCj-1a0KwBL5f6lmMHKwU1KV6BSG74Fo2yLCihd-DeWKeDbKzYef9SXbpXdaATnzAM8I_p_jT-hnVU3ArkdSiLulR6D2t27pTAMo_km75ogvIVvNzQQl_4K9pumn-kTNN5XRzOtZHbUjkmg1eZ7NvC7SDIJvX2OQTXB');">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-bold text-base">Mix-Grill Pizza</h4>
+                            <span class="text-primary font-bold text-sm">KES 1,800</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs line-clamp-2">Smoked meats, bell peppers,
+                            mozzarella, and our signature tomato base.</p>
+                        <div class="flex items-center gap-1 mt-3">
+                            <span class="material-symbols-outlined text-sm text-yellow-500">star</span>
+                            <span class="text-[10px] font-bold">4.9 (120+)</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="safari-detail.html"
+                    class="shrink-0 w-64 bg-white dark:bg-white/5 rounded-xl overflow-hidden border border-slate-100 dark:border-white/10 shadow-sm hover-lift">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIeKx9uyF41noDqZpLwQuWXSCEEqjpFFam5vRi3Ih9UuKBBWez0e_a-VETRRI_IyaKudXKIHRCqzkxcIVbFHeEvbLv6BpsfpwNXPvJQAIfaZOOSjGrfroJwQQcpzot2JF5D31YUnJXST-yvtwuPnykVBvy43Ea6bgiKbEDPNR-awp4X0nKmCH48l3mM3eHkqXX7LWNL7RTxVNE9h2M4Cql_YlG9j_5aZEtm5ke1hshozQdEKWsdaziLi-pTSFgDl7A7gHaJ3LdF5Kf');">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-bold text-base">Marine Snorkeling</h4>
+                            <span class="text-primary font-bold text-sm">KES 4,500</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs line-clamp-2">Half-day tour exploring the
+                            vibrant reefs of Watamu Marine Park.</p>
+                        <div class="flex items-center gap-3 mt-3">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px] text-slate-400">schedule</span>
+                                <span class="text-[10px] font-medium">4 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="mt-10 px-4">
+            <div
+                class="bg-primary/10 dark:bg-primary/20 p-6 rounded-2xl flex items-center justify-between cursor-pointer hover-lift">
+                <div class="max-w-[70%]">
+                    <h4 class="font-bold text-lg">Plan Your Visit</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Get custom travel itineraries and
+                        restaurant reservations.</p>
+                </div>
+                <div
+                    class="bg-primary size-10 rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-white/5 px-6 pb-8 pt-3 z-50">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined text-primary">home</span>
+                <span class="text-[10px] font-bold text-primary">Home</span>
+            </a>
+            <a href="menu.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">restaurant_menu</span>
+                <span class="text-[10px] font-medium">Menu</span>
+            </a>
+            <a href="safari-booking.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">explore</span>
+                <span class="text-[10px] font-medium">Safari</span>
+            </a>
+            <a href="checkout.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="text-[10px] font-medium">Bookings</span>
+            </a>
+            <a href="#" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-medium">Account</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+/* ==================== BASE STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: max(884px, 100dvh);
+}
+
+/* ==================== SCROLLBAR HIDING ==================== */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ==================== IOS BLUR EFFECT ==================== */
+.ios-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* ==================== HOVER EFFECTS ==================== */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== CHIP STYLES ==================== */
+.chip {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip:hover {
+    opacity: 0.9;
+}
+
+/* ==================== CAROUSEL DOTS ==================== */
+.dot {
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 1.5rem;
+    background-color: #f46a25;
+}
+
+/* ==================== MENU ITEM ANIMATIONS ==================== */
+.menu-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+}
+
+/* ==================== BUTTON ANIMATIONS ==================== */
+.add-to-cart,
+.add-safari-to-cart {
+    position: relative;
+    overflow: hidden;
+}
+
+.add-to-cart::after,
+.add-safari-to-cart::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.add-to-cart:active::after,
+.add-safari-to-cart:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* ==================== TOGGLE BUTTONS ==================== */
+.toggle-btn {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+    background-color: #f46a25;
+    color: white;
+}
+
+/* ==================== TOAST NOTIFICATIONS ==================== */
+#toast {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translateY(-10px) translateX(-50%);
+}
+
+#toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) translateX(-50%);
+}
+
+/* ==================== FAVORITE BUTTON ==================== */
+#favorite-btn.active span {
+    color: #ef4444;
+    font-variation-settings: 'FILL' 1;
+}
+
+/* ==================== CALENDAR DAY STYLES ==================== */
+.calendar-day {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-day:hover:not(.selected) {
+    background-color: rgba(244, 106, 37, 0.1);
+    border-radius: 0.5rem;
+}
+
+/* ==================== LINE CLAMP ==================== */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==================== CUSTOM ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+/* ==================== CARD STYLES ==================== */
+.safari-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.safari-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(244, 106, 37, 0.3);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(244, 106, 37, 0.5);
+}
+
+/* ==================== LINK STYLES ==================== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 100px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
