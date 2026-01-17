@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us - Jacaranda Rossa</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+        <a href="index.html"
+            class="flex items-center text-slate-900 dark:text-white hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+        </a>
+        <h1 class="text-lg font-extrabold tracking-tight">Contact Us</h1>
+        <div class="w-6"></div> <!-- Spacer for centering -->
+    </header>
+
+    <main class="pb-24 px-4 pt-4">
+        <!-- Contact Info Cards -->
+        <section class="grid grid-cols-2 gap-4 mb-8">
+            <div
+                class="bg-white dark:bg-white/5 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 flex flex-col items-center justify-center text-center gap-2 hover-lift">
+                <div class="bg-primary/10 p-3 rounded-full text-primary">
+                    <span class="material-symbols-outlined text-2xl">call</span>
+                </div>
+                <h3 class="font-bold text-sm">Call Us</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">+254 700 123 456</p>
+            </div>
+            <div
+                class="bg-white dark:bg-white/5 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 flex flex-col items-center justify-center text-center gap-2 hover-lift">
+                <div class="bg-primary/10 p-3 rounded-full text-primary">
+                    <span class="material-symbols-outlined text-2xl">mail</span>
+                </div>
+                <h3 class="font-bold text-sm">Email Us</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">info@jacaranda.com</p>
+            </div>
+        </section>
+
+        <!-- Use Google Maps or Placeholder -->
+        <section
+            class="mb-8 rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-white/10 relative h-48 group">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipN3-vW7-gK7-j5-x8-1-f9-0-h3-5-j7-k6-l9-m0-n1'); filter: brightness(0.7);">
+            </div> <!-- Simplified Placeholder URL/Image -->
+            <!-- Actual map iframe would go here in production, using a static image for design -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.278776856534!2d36.81667!3d-1.28333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d7b0b0b0b1%3A0x2b0b0b0b0b0b0b0b!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk"
+                width="100%" height="100%" style="border:0; filter: grayscale(50%) contrast(1.2) opacity(0.8);"
+                allowfullscreen="" loading="lazy"></iframe>
+            <div
+                class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-md p-3 rounded-xl flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-slate-900 dark:text-white">Our Location</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-300">Westlands, Nairobi, Kenya</p>
+                </div>
+                <div
+                    class="bg-primary text-white p-2 rounded-full cursor-pointer hover:bg-orange-600 transition-colors">
+                    <span class="material-symbols-outlined text-lg">directions</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section>
+            <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
+            <form class="flex flex-col gap-4">
+                <div class="space-y-1">
+                    <label
+                        class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1">Full
+                        Name</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">person</span>
+                        <input type="text" placeholder="John Doe"
+                            class="w-full bg-slate-100 dark:bg-white/5 border border-transparent dark:border-white/10 focus:border-primary focus:ring-0 rounded-xl py-4 pl-12 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 transition-all font-medium" />
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label
+                        class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1">Email
+                        Address</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+                        <input type="email" placeholder="john@example.com"
+                            class="w-full bg-slate-100 dark:bg-white/5 border border-transparent dark:border-white/10 focus:border-primary focus:ring-0 rounded-xl py-4 pl-12 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 transition-all font-medium" />
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label
+                        class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1">Message</label>
+                    <textarea rows="4" placeholder="How can we help you?"
+                        class="w-full bg-slate-100 dark:bg-white/5 border border-transparent dark:border-white/10 focus:border-primary focus:ring-0 rounded-xl p-4 text-slate-900 dark:text-white placeholder:text-slate-400 transition-all font-medium resize-none"></textarea>
+                </div>
+
+                <button type="button"
+                    class="mt-4 w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 hover:bg-orange-600 hover:shadow-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                    onclick="document.getElementById('toast').classList.add('show'); setTimeout(() => document.getElementById('toast').classList.remove('show'), 3000);">
+                    <span>Send Message</span>
+                    <span class="material-symbols-outlined text-lg">send</span>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-white/5 px-6 pb-8 pt-3 z-50">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="menu.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">restaurant_menu</span>
+                <span class="text-[10px] font-medium">Menu</span>
+            </a>
+            <a href="safari-booking.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">explore</span>
+                <span class="text-[10px] font-medium">Safari</span>
+            </a>
+            <a href="checkout.html" class="flex flex-col items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span class="text-[10px] font-medium">Bookings</span>
+            </a>
+            <a href="contact.html" class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined">contact_support</span>
+                <span class="text-[10px] font-bold">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed top-20 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl shadow-2xl z-[100] opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4 flex items-center gap-3">
+        <span class="material-symbols-outlined text-green-500">check_circle</span>
+        <span class="font-bold text-sm">Message Sent Successfully!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
