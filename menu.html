@@ -15,8 +15,7 @@
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
-    <div
-        class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden">
+    <div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-hidden">
         <header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
             <div class="flex items-center p-4 pb-2 justify-between">
                 <a href="index.html" class="text-primary flex size-12 shrink-0 items-center justify-start">
@@ -29,139 +28,625 @@
                 </button>
             </div>
             <div class="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar">
-                <div
-                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-6 shadow-lg shadow-primary/20 chip active">
-                    <p class="text-white text-sm font-semibold">All</p>
+                <div id="filter-all"
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-6 shadow-lg shadow-primary/20 chip active cursor-pointer">
+                    <p class="text-white text-sm font-semibold">Home</p>
                 </div>
-                <div
-                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-card-dark px-5 border border-slate-200 dark:border-transparent chip">
+                <div id="filter-italian"
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-card-dark px-5 border border-slate-200 dark:border-transparent chip cursor-pointer transition-all">
                     <span class="material-symbols-outlined text-primary text-sm">restaurant</span>
                     <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Italian</p>
                 </div>
-                <div
-                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-card-dark px-5 border border-slate-200 dark:border-transparent chip">
+                <div id="filter-african"
+                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-card-dark px-5 border border-slate-200 dark:border-transparent chip cursor-pointer transition-all">
                     <span class="material-symbols-outlined text-primary text-sm">nature_people</span>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Kenyan</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">African</p>
                 </div>
             </div>
         </header>
 
-        <main class="flex-1 overflow-y-auto pb-32">
-            <!-- Kenyan Selection -->
-            <div class="px-4 py-2">
-                <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Authentic African</h3>
-                <div
-                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
-                    <div class="w-full aspect-video bg-cover bg-center"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6hIXqXe0ad975dBkByvKAhUIqrP2nD2I-jGLKnlX5aAJplg4V6uekVckD8-e8eS-Stv11TMgNvPszF_ySk4O0rmUNuJrAm7z88g76FtYwI0GOOg2Zt9OV8xOHxIGm6kPGf0ND7HpVuluNiqoh9HkYV2bzqbPwyie5IjvSUEmMPvjmZMLL5Qv5hlGCVjVAFLqe-IaIYbBW1UQJya6FakW-FcBApH-LXr8CzDI6Rwj138aUzI8SjgalfFo8QbYTLB753K2FwPRjPa_0");'>
-                    </div>
-                    <div class="flex w-full flex-col gap-1 p-4">
-                        <div class="flex justify-between items-start">
-                            <p class="text-lg font-bold">Authentic Nyama Choma</p>
-                            <span class="text-primary font-bold text-lg">$18.50</span>
+        <main class="flex-1 overflow-x-auto overflow-y-hidden flex flex-row items-start pl-4 gap-6 scroll-smooth"
+            id="menu-container">
+
+            <!-- Default Column (Swahili/Base) -->
+            <div id="col-default"
+                class="min-w-[360px] max-w-md flex flex-col gap-4 h-full overflow-y-auto pr-2 pb-36 no-scrollbar">
+                <div class="py-2">
+                    <h3
+                        class="text-primary font-bold text-xs uppercase tracking-widest mb-3 sticky top-0 bg-background-light dark:bg-background-dark z-10 py-2">
+                        Swahili Coastal Delights</h3>
+                    <!-- Item 1 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQ7dQ9QW5TaluUED3uEgdTFJiyBf8xKGBlxm-l336TpQKN0xzHu1CycqRTJWa2qJGyyRSmgU2nwQXDWRFNXS7s5eoNteMgVZA-NUr7Oh_mFa9tWcftiGM1pAHJf9Aro8JKrZ37QctEzH-94GfevZ2W9V6UXGRnKWRSkNFOlSufeGQ1yQDrAZSB2L6uKbp-uly-CcQT-cEpj3BiD-5F5j2L3jmx8BB8N1JhdjqDjN4oclmBLPjYfjgbjNwovIsLaOJ75aUV7Vq60c19");'>
                         </div>
-                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Flame-grilled goat meat with
-                            kachumbari and ugali.</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <div class="flex gap-1">
-                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
-                                <span class="text-xs font-semibold">4.9 (120+)</span>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Coastal Beef Pilau</p><span
+                                    class="text-primary font-bold text-lg">$14.50</span>
                             </div>
-                            <button
-                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
-                                data-name="Authentic Nyama Choma" data-price="18.50">
-                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
-                                <span>Add</span>
-                            </button>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Aromatic rice with beef and
+                                coastal spices.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (56+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Coastal Beef Pilau" data-price="14.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1698829562817-21a44c9f1344?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Samaki Wa Kupaka</p><span
+                                    class="text-primary font-bold text-lg">$16.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Grilled fish coated in a rich,
+                                spicy coconut sauce.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (42+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Samaki Wa Kupaka" data-price="16.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Chicken Biryani</p><span
+                                    class="text-primary font-bold text-lg">$15.50</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Fragrant basmati rice layered
+                                with spiced chicken.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.7 (98+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Chicken Biryani" data-price="15.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1541518763669-27fef04b14ea?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Mahamri & Mbaazi</p><span
+                                    class="text-primary font-bold text-lg">$8.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Swahili coconut donuts with
+                                pigeon peas in coconut milk.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (75+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Mahamri & Mbaazi" data-price="8.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1606471191009-63994c53433b?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Bhajia za Dengu</p><span
+                                    class="text-primary font-bold text-lg">$6.50</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Crispy lentil fritters seasoned
+                                with fresh herbs.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.6 (50+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Bhajia za Dengu" data-price="6.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Kuku Paka</p><span
+                                    class="text-primary font-bold text-lg">$14.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Grilled chicken simmered in a
+                                turmeric-coconut curry.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (60+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Kuku Paka" data-price="14.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1529006557810-274b9b2fc783?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Mishkaki Skewers</p><span
+                                    class="text-primary font-bold text-lg">$12.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Tender marinated beef skewers
+                                grilled over charcoal.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (88+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Mishkaki Skewers" data-price="12.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1593560708920-63878415dabd?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Viazi Karai</p><span
+                                    class="text-primary font-bold text-lg">$5.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Spicy battered fried potatoes
+                                served with tamarind sauce.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.7 (35+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Viazi Karai" data-price="5.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Italian Selection -->
-            <div class="px-4 py-2">
-                <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Italian Classics</h3>
-                <div
-                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
-                    <div class="w-full aspect-video bg-cover bg-center"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcfvjyB1rrR3NvksU1NBgxInejyxf-XSSlWwXS4-hZUQLvIVARfpufGypjsIAzJjokhEHE470tjoChLsFO69zRtLw_mw4dsmg-3X0dW5yWZOZDmd7rUnIAvkY07CYBeoscFckQGvmGQTOEq9MD-9ss6n_SBZ0hVVOYYKRq2QHrzG540Q7bFvfpxS-FxjpwBLIY-U1m5HPXxXstuR5g9tnPGyHZsFnygJN1XeKI94e_vLY3sSPivmdIyUl30CAWROaJmtJluc5wNj9a");'>
-                    </div>
-                    <div class="flex w-full flex-col gap-1 p-4">
-                        <div class="flex justify-between items-start">
-                            <p class="text-lg font-bold">Homemade Lasagna</p>
-                            <span class="text-primary font-bold text-lg">$22.00</span>
+            <div id="col-italian"
+                class="min-w-[360px] max-w-md flex flex-col gap-4 h-full overflow-y-auto pr-2 pb-36 hidden transition-all duration-300 opacity-0 no-scrollbar">
+                <div class="py-2">
+                    <h3
+                        class="text-primary font-bold text-xs uppercase tracking-widest mb-3 sticky top-0 bg-background-light dark:bg-background-dark z-10 py-2">
+                        Italian Classics</h3>
+                    <!-- Item 1 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcfvjyB1rrR3NvksU1NBgxInejyxf-XSSlWwXS4-hZUQLvIVARfpufGypjsIAzJjokhEHE470tjoChLsFO69zRtLw_mw4dsmg-3X0dW5yWZOZDmd7rUnIAvkY07CYBeoscFckQGvmGQTOEq9MD-9ss6n_SBZ0hVVOYYKRq2QHrzG540Q7bFvfpxS-FxjpwBLIY-U1m5HPXxXstuR5g9tnPGyHZsFnygJN1XeKI94e_vLY3sSPivmdIyUl30CAWROaJmtJluc5wNj9a");'>
                         </div>
-                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Fresh pasta, beef bolognese, and
-                            creamy bechamel.</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <div class="flex gap-1">
-                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
-                                <span class="text-xs font-semibold">4.8 (85+)</span>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Homemade Lasagna</p><span
+                                    class="text-primary font-bold text-lg">$22.00</span>
                             </div>
-                            <button
-                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
-                                data-name="Homemade Lasagna" data-price="22.00">
-                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
-                    <div class="w-full aspect-video bg-cover bg-center"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEisDhNSjjPOPi15xvIz0i0Pz-SIjj3QIs5QvXt1njn1cMq1mcOj16LocNMjtCwfxXh5rY8TOmFsFKveD-cvulHLRrCjjLf7quwW-d6ZMOu7aTNAALLl89ZLWJ01i9ZLGxDKArkWLBcQ5IU5zKeLh6qiKGZ3YEY6-wOQGglNDMEofUXBp60k4h-yjRuXeJCBnUk2zAAdiIxP4eGdxn0hbSwtJmL8wdHU1YHPiIt2LYWgVR6Uvs_E0AprC-YhIV0wZzmUMn5W1miFyv");'>
-                    </div>
-                    <div class="flex w-full flex-col gap-1 p-4">
-                        <div class="flex justify-between items-start">
-                            <p class="text-lg font-bold">Artisanal Margherita</p>
-                            <span class="text-primary font-bold text-lg">$16.00</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Wood-fired with San Marzano tomatoes
-                            and basil.</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <div class="flex gap-1">
-                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
-                                <span class="text-xs font-semibold">4.7 (210+)</span>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Fresh pasta, beef bolognese, and
+                                creamy bechamel.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (85+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Homemade Lasagna" data-price="22.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
                             </div>
-                            <button
-                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
-                                data-name="Artisanal Margherita" data-price="16.00">
-                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
-                                <span>Add</span>
-                            </button>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEisDhNSjjPOPi15xvIz0i0Pz-SIjj3QIs5QvXt1njn1cMq1mcOj16LocNMjtCwfxXh5rY8TOmFsFKveD-cvulHLRrCjjLf7quwW-d6ZMOu7aTNAALLl89ZLWJ01i9ZLGxDKArkWLBcQ5IU5zKeLh6qiKGZ3YEY6-wOQGglNDMEofUXBp60k4h-yjRuXeJCBnUk2zAAdiIxP4eGdxn0hbSwtJmL8wdHU1YHPiIt2LYWgVR6Uvs_E0AprC-YhIV0wZzmUMn5W1miFyv");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Artisanal Margherita</p><span
+                                    class="text-primary font-bold text-lg">$16.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Wood-fired with San Marzano
+                                tomatoes and basil.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.7 (210+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Artisanal Margherita" data-price="16.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Spaghetti Carbonara</p><span
+                                    class="text-primary font-bold text-lg">$18.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Authentic Roman style with
+                                pancetta, eggs, and pecorino.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (115+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Spaghetti Carbonara" data-price="18.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1608219992759-8d74ed8d59bf?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Risotto ai Funghi</p><span
+                                    class="text-primary font-bold text-lg">$19.50</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Creamy arborio rice with wild
+                                porcini mushrooms and truffle oil.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (92+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Risotto ai Funghi" data-price="19.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1587740967785-5a1d7c38558f?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Ravioli di Ricotta</p><span
+                                    class="text-primary font-bold text-lg">$17.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Handmade pasta filled with
+                                ricotta and spinach in sage butter.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.7 (65+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Ravioli di Ricotta" data-price="17.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Pollo Parmigiana</p><span
+                                    class="text-primary font-bold text-lg">$21.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Breaded chicken breast topped
+                                with marinara and melted mozzarella.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (88+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Pollo Parmigiana" data-price="21.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Classic Tiramisu</p><span
+                                    class="text-primary font-bold text-lg">$9.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Layers of coffee-soaked
+                                ladyfingers and mascarpone cream.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (250+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Classic Tiramisu" data-price="9.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1544516161-99ef2ea058d4?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Osso Buco</p><span
+                                    class="text-primary font-bold text-lg">$24.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Braised veal shanks served with
+                                saffron risotto.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (45+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Osso Buco" data-price="24.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Swahili -->
-            <div class="px-4 py-2">
-                <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Swahili Coastal Delights</h3>
-                <div
-                    class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
-                    <div class="w-full aspect-video bg-cover bg-center"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQ7dQ9QW5TaluUED3uEgdTFJiyBf8xKGBlxm-l336TpQKN0xzHu1CycqRTJWa2qJGyyRSmgU2nwQXDWRFNXS7s5eoNteMgVZA-NUr7Oh_mFa9tWcftiGM1pAHJf9Aro8JKrZ37QctEzH-94GfevZ2W9V6UXGRnKWRSkNFOlSufeGQ1yQDrAZSB2L6uKbp-uly-CcQT-cEpj3BiD-5F5j2L3jmx8BB8N1JhdjqDjN4oclmBLPjYfjgbjNwovIsLaOJ75aUV7Vq60c19");'>
-                    </div>
-                    <div class="flex w-full flex-col gap-1 p-4">
-                        <div class="flex justify-between items-start">
-                            <p class="text-lg font-bold">Coastal Beef Pilau</p>
-                            <span class="text-primary font-bold text-lg">$14.50</span>
+            <div id="col-african"
+                class="min-w-[360px] max-w-md flex flex-col gap-4 h-full overflow-y-auto pr-2 pb-36 hidden transition-all duration-300 opacity-0 no-scrollbar">
+                <div class="py-2">
+                    <h3
+                        class="text-primary font-bold text-xs uppercase tracking-widest mb-3 sticky top-0 bg-background-light dark:bg-background-dark z-10 py-2">
+                        Authentic African</h3>
+                    <!-- Item 1 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6hIXqXe0ad975dBkByvKAhUIqrP2nD2I-jGLKnlX5aAJplg4V6uekVckD8-e8eS-Stv11TMgNvPszF_ySk4O0rmUNuJrAm7z88g76FtYwI0GOOg2Zt9OV8xOHxIGm6kPGf0ND7HpVuluNiqoh9HkYV2bzqbPwyie5IjvSUEmMPvjmZMLL5Qv5hlGCVjVAFLqe-IaIYbBW1UQJya6FakW-FcBApH-LXr8CzDI6Rwj138aUzI8SjgalfFo8QbYTLB753K2FwPRjPa_0");'>
                         </div>
-                        <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Aromatic rice with beef and coastal
-                            spices.</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <div class="flex gap-1">
-                                <span class="material-symbols-outlined text-yellow-500 text-xs">star</span>
-                                <span class="text-xs font-semibold">4.9 (56+)</span>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Authentic Nyama Choma</p><span
+                                    class="text-primary font-bold text-lg">$18.50</span>
                             </div>
-                            <button
-                                class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
-                                data-name="Coastal Beef Pilau" data-price="14.50">
-                                <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
-                                <span>Add</span>
-                            </button>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Flame-grilled goat meat with
+                                kachumbari and ugali.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (120+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Authentic Nyama Choma" data-price="18.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1594834749740-74b3f6764be4?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Ugali na Sukuma Wiki</p><span
+                                    class="text-primary font-bold text-lg">$10.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Classic maize flour cake served
+                                with sautéed collard greens.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (200+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Ugali na Sukuma Wiki" data-price="10.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1623961990059-28356e226a77?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Mukimo Special</p><span
+                                    class="text-primary font-bold text-lg">$12.50</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Mashed potatoes, greens, maize,
+                                and pumpkin leaves stew.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.7 (80+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Mukimo Special" data-price="12.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Kachumbari Salad</p><span
+                                    class="text-primary font-bold text-lg">$7.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Fresh tomato and onion salad with
+                                chili and coriander.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (55+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Kachumbari Salad" data-price="7.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1610970805264-847055eb5925?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Matoke Stew</p><span
+                                    class="text-primary font-bold text-lg">$11.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Green plantains cooked in a
+                                savory tomato and meat sauce.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.6 (40+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Matoke Stew" data-price="11.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Chapati & Ndengu</p><span
+                                    class="text-primary font-bold text-lg">$9.50</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Soft layered flatbread served
+                                with savory green gram stew.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (150+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Chapati & Ndengu" data-price="9.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Kuku Kienyeji</p><span
+                                    class="text-primary font-bold text-lg">$15.00</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Traditional free-range chicken
+                                stewed with local herbs.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.9 (95+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Kuku Kienyeji" data-price="15.00"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div
+                        class="flex flex-col rounded-xl overflow-hidden shadow-md bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 mb-4 menu-item">
+                        <div class="w-full aspect-video bg-cover bg-center"
+                            style='background-image: url("https://images.unsplash.com/photo-1535920527002-b35e96722eb9?q=80&w=600&auto=format&fit=crop");'>
+                        </div>
+                        <div class="flex w-full flex-col gap-1 p-4">
+                            <div class="flex justify-between items-start">
+                                <p class="text-lg font-bold">Whole Tilapia Fry</p><span
+                                    class="text-primary font-bold text-lg">$17.50</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-[#cba490] text-sm mt-1">Fresh tilapia from Lake Victoria,
+                                deep-fried to perfection.</p>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex gap-1"><span
+                                        class="material-symbols-outlined text-yellow-500 text-xs">star</span><span
+                                        class="text-xs font-semibold">4.8 (110+)</span></div>
+                                <button
+                                    class="flex min-w-[100px] items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 active:scale-95 transition-transform add-to-cart"
+                                    data-name="Whole Tilapia Fry" data-price="17.50"><span
+                                        class="material-symbols-outlined text-lg">add_shopping_cart</span><span>Add</span></button>
+                            </div>
                         </div>
                     </div>
                 </div>

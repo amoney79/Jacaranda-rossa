@@ -247,26 +247,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Menu category chips
-    document.querySelectorAll('.chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-            document.querySelectorAll('.chip').forEach(c => {
-                c.classList.remove('bg-primary', 'shadow-lg', 'shadow-primary/20');
-                c.classList.add('bg-white', 'dark:bg-card-dark', 'border', 'border-slate-200', 'dark:border-transparent');
-                const p = c.querySelector('p');
-                if (p) {
-                    p.classList.remove('text-white');
-                    p.classList.add('text-slate-600', 'dark:text-slate-300');
-                }
-            });
+    // Menu Layout & Column Management
+    const colDefault = document.getElementById('col-default');
+    const colItalian = document.getElementById('col-italian');
+    const colAfrican = document.getElementById('col-african');
+
+    const chipHome = document.getElementById('filter-all');
+    const chipItalian = document.getElementById('filter-italian');
+    const chipAfrican = document.getElementById('filter-african');
+
+    function updateChipState(chip, isActive) {
+        if (!chip) return;
+        const p = chip.querySelector('p');
+        if (isActive) {
             chip.classList.add('bg-primary', 'shadow-lg', 'shadow-primary/20');
             chip.classList.remove('bg-white', 'dark:bg-card-dark', 'border', 'border-slate-200', 'dark:border-transparent');
-            const p = chip.querySelector('p');
             if (p) {
                 p.classList.add('text-white');
                 p.classList.remove('text-slate-600', 'dark:text-slate-300');
             }
+        } else {
+            chip.classList.remove('bg-primary', 'shadow-lg', 'shadow-primary/20');
+            chip.classList.add('bg-white', 'dark:bg-card-dark', 'border', 'border-slate-200', 'dark:border-transparent');
+            if (p) {
+                p.classList.remove('text-white');
+                p.classList.add('text-slate-600', 'dark:text-slate-300');
+            }
+        }
+    }
+
+    function toggleColumn(column, chip, show) {
+        if (!column) return;
+
+        if (show) {
+            column.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                column.classList.remove('opacity-0');
+            }, 10);
+            if (chip) updateChipState(chip, true);
+        } else {
+            column.classList.add('opacity-0');
+            setTimeout(() => {
+                column.classList.add('hidden');
+            }, 300); // Match transition duration
+            if (chip) updateChipState(chip, false);
+        }
+    }
+
+    // Home / Reset
+    if (chipHome) {
+        chipHome.addEventListener('click', () => {
+            updateChipState(chipHome, true);
+            toggleColumn(colItalian, chipItalian, false);
+            toggleColumn(colAfrican, chipAfrican, false);
         });
+    }
+
+    // Italian Filter
+    if (chipItalian) {
+        chipItalian.addEventListener('click', () => {
+            const isHidden = colItalian.classList.contains('hidden');
+            toggleColumn(colItalian, chipItalian, isHidden);
+            if (isHidden) updateChipState(chipHome, false); // Optional: dim home if filtering? Or keep it? keeping simplistic.
+        });
+    }
+
+    // African Filter
+    if (chipAfrican) {
+        chipAfrican.addEventListener('click', () => {
+            const isHidden = colAfrican.classList.contains('hidden');
+            toggleColumn(colAfrican, chipAfrican, isHidden);
+            if (isHidden) updateChipState(chipHome, false);
+        });
+    }
+
+    // Inactivity Timer
+    let inactivityTimer;
+
+    function resetInactivity() {
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(() => {
+            // Collapse all extra columns after 2 mins
+            toggleColumn(colItalian, chipItalian, false);
+            toggleColumn(colAfrican, chipAfrican, false);
+            updateChipState(chipHome, true);
+        }, 120000); // 2 minutes
+    }
+
+    // Listen for activity
+    ['mousemove', 'click', 'scroll', 'keydown', 'touchstart'].forEach(evt => {
+        document.addEventListener(evt, resetInactivity, { passive: true });
     });
+
+    // Start timer on load
+    resetInactivity();
 
     // Toggle buttons (delivery/pickup)
     document.querySelectorAll('.toggle-btn').forEach(btn => {
@@ -289,17 +364,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Calendar day selection
-    document.querySelectorAll('.calendar-day').forEach(day => {
-        day.addEventListener('click', () => {
-            document.querySelectorAll('.calendar-day').forEach(d => {
-                d.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'selected');
-                d.classList.add('text-gray-900', 'dark:text-white');
+    // Dynamic Calendar Logic
+    const calendarContainer = document.getElementById('calendar-days');
+    const monthYearEl = document.getElementById('calendar-month-year');
+    const prevBtn = document.getElementById('calendar-prev');
+    const nextBtn = document.getElementById('calendar-next');
+
+    let viewDate = new Date();
+    let selectedDate = new Date();
+
+    function renderCalendar() {
+        if (!calendarContainer || !monthYearEl) return;
+
+        // Update Header
+        monthYearEl.textContent = viewDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        calendarContainer.innerHTML = '';
+        const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+        // Render 7 days starting from viewDate
+        let loopDate = new Date(viewDate);
+
+        for (let i = 0; i < 7; i++) {
+            const isSelected = loopDate.toDateString() === selectedDate.toDateString();
+            const isToday = loopDate.toDateString() === new Date().toDateString();
+
+            const dayEl = document.createElement('div');
+            // Base classes
+            let cls = "flex flex-col items-center min-w-[45px] py-2 rounded-lg cursor-pointer transition-all shrink-0 ";
+
+            if (isSelected) {
+                cls += "bg-primary text-white shadow-lg shadow-primary/30 font-bold";
+            } else {
+                cls += "text-gray-400 hover:text-primary dark:text-gray-400 ";
+                if (isToday) cls += "text-gray-900 dark:text-white font-bold border border-primary/20";
+            }
+
+            dayEl.className = cls;
+            dayEl.innerHTML = `
+                <span class="text-[10px] font-bold uppercase">${dayNames[loopDate.getDay()]}</span>
+                <span class="text-sm font-medium">${loopDate.getDate()}</span>
+            `;
+
+            // Capture date for click
+            const clickDate = new Date(loopDate);
+            dayEl.addEventListener('click', () => {
+                selectedDate = clickDate;
+                renderCalendar();
             });
-            day.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'selected');
-            day.classList.remove('text-gray-900', 'dark:text-white', 'text-gray-400');
-        });
-    });
+
+            calendarContainer.appendChild(dayEl);
+            loopDate.setDate(loopDate.getDate() + 1);
+        }
+    }
+
+    if (calendarContainer) {
+        renderCalendar();
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                viewDate.setDate(viewDate.getDate() - 7);
+                renderCalendar();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                viewDate.setDate(viewDate.getDate() + 7);
+                renderCalendar();
+            });
+        }
+    }
 
     // Carousel scroll handler
     const carousel = document.getElementById('hero-carousel');
